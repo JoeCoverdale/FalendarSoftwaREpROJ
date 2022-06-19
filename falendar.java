@@ -4,7 +4,6 @@
 
 //Imported Libraries
 import java.awt.Color;
-
 import org.omg.CORBA.portable.ApplicationException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -13,7 +12,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
+
+/* 
 //Fucntion used within the first page
 public class firstPage extends Application {
     public void start(Stage Stage){
@@ -29,6 +32,7 @@ public class firstPage extends Application {
         launch(args);
     }   
 }
+*/
 
 //Create account page function
 public class createAccountPage {
