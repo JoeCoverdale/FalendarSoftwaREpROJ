@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+/*
 //Function used for first page user will see when using the app
 public class logInPageController extends Application {
     public void start(Stage stage){
@@ -28,4 +29,5 @@ public class logInPageController extends Application {
         launch(args);
     }
 }
+*/
 

@@ -1,3 +1,7 @@
+// Software Project: Fitness Calendar
+//Creator: Joseph Coverdale
+//Student Number: 17024693
+
 //Imported libraries
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +11,7 @@ public class databaseCon {
     public Connection databaseLink;
 
     public Connection getConnection(){
-        String databaseName = "Dbusername123";
+        String databaseName = "LocalHost";
         String databaseUser = "root";
         String databasePassword = "123456";
 
