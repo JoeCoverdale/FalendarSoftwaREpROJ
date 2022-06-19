@@ -15,8 +15,8 @@ import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-//Fucntion used for the create account page 
-public class createAccountPage extends Application {
+//Function used for first page user will see when using the app
+public class logInPageController extends Application {
     public void start(Stage stage){
         Group root = new Group();
         Scene scene = new Scene(root, 300,450, Color.WHITE);
@@ -28,3 +28,4 @@ public class createAccountPage extends Application {
         launch(args);
     }
 }
+

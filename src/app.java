@@ -15,8 +15,8 @@ import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-//Function used for first page user will see when using the app
-public class logInPage extends Application {
+//Fucntion used for calendar page within app
+public class app extends Application {
     public void start(Stage stage){
         Group root = new Group();
         Scene scene = new Scene(root, 300,450, Color.WHITE);
@@ -28,4 +28,5 @@ public class logInPage extends Application {
         launch(args);
     }
 }
+
 
