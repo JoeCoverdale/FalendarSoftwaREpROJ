@@ -15,6 +15,11 @@ import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+//Function used for first page user will see when using the app
+public class appOpenPage {
+
+}
+
 
 /* 
 //Fucntion used within the first page
