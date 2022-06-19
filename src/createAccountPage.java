@@ -15,17 +15,16 @@ import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-//Function used for first page user will see when using the app
-public class appOpenPage extends Application {
+//Fucntion used for the create account page 
+public class createAccountPage extends Application {
     public void start(Stage stage){
         Group root = new Group();
-        Scene scene = new Scene(root, 595,300, Color.WHITE);
+        Scene scene = new Scene(root, 300,450, Color.WHITE);
         stage.setScene(scene);
-        stage.setTitle("Falendar");
+        stage.setTitle("Create Account");
         stage.show();
     }
     public static void main(String args[]){
         launch(args);
     }
 }
-

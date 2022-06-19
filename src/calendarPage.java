@@ -16,8 +16,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 //Fucntion used for calendar page within app
-public class calendarPage {
-    
+public class calendarPage extends Application {
+    public void start(Stage stage){
+        Group root = new Group();
+        Scene scene = new Scene(root, 300,450, Color.WHITE);
+        stage.setScene(scene);
+        stage.setTitle("Create Account");
+        stage.show();
+    }
+    public static void main(String args[]){
+        launch(args);
+    }
 }
 
 
