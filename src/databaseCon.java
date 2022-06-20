@@ -11,15 +11,14 @@ public class databaseCon {
     public Connection databaseLink;
 
     public Connection getConnection(){
-        String databaseName = "LocalHost";
-        String databaseUser = "root";
-        String databasePassword = "123456";
-
-        String connectionString = "jdbc:mysql://localhost/" + databaseName + "?user=" + databaseUser + "&password=" + databasePassword + "&useUnicode=true&characterEncoding=UTF-8";
+        String dbName = "LocalHost";
+        String dbUser = "root";
+        String dbPassword = "123456";
+        String url = "jdbc:mysql://localhost/" + dbName;
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            databaseLink = DriverManager.getConnection(connectionString, databaseUser, databasePassword);
+            databaseLink = DriverManager.getConnection(url, dbUser, dbPassword);
 
         }catch(Exception e) {
             e.printStackTrace();

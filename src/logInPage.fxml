@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="386.0" style="-fx-background-color: #009391;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logInPageController">
    <top>
       <AnchorPane prefHeight="105.0" prefWidth="600.0" BorderPane.alignment="CENTER">
@@ -20,25 +19,28 @@
          </children>
       </AnchorPane>
    </top>
-   <bottom>
-      <AnchorPane prefHeight="442.0" prefWidth="386.0" style="-fx-background-color: Mihnt;" BorderPane.alignment="CENTER">
+   <center>
+      <AnchorPane prefHeight="442.0" prefWidth="386.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="67.0" layoutY="72.0" prefHeight="47.0" prefWidth="251.0" />
-            <TextField layoutX="66.0" layoutY="174.0" prefHeight="47.0" prefWidth="251.0" />
-            <Label layoutX="133.0" layoutY="28.0" prefHeight="44.0" prefWidth="141.0" text="Username" textAlignment="CENTER">
+            <TextField fx:id="usernameTextField" layoutX="65.0" layoutY="109.0" prefHeight="47.0" prefWidth="251.0" promptText="Username" />
+            <TextField fx:id="passwordTextField" layoutX="65.0" layoutY="230.0" prefHeight="47.0" prefWidth="251.0" promptText="Password" />
+            <Label layoutX="131.0" layoutY="65.0" prefHeight="44.0" prefWidth="141.0" text="Username:" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <Button layoutX="68.0" layoutY="237.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="248.0" text="Log In" />
-            <Button layoutX="66.0" layoutY="286.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" text="Create Account" />
-            <Button layoutX="204.0" layoutY="286.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="114.0" text="Forgot password" />
-            <Label layoutX="133.0" layoutY="130.0" prefHeight="44.0" prefWidth="141.0" text="Password" textAlignment="CENTER">
+            <Button fx:id="logInButton" layoutX="67.0" layoutY="344.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="248.0" text="Log In" />
+            <Button fx:id="createAccountButton" layoutX="67.0" layoutY="398.0" mnemonicParsing="false" onAction="#createAccountButtonOnAction" prefHeight="50.0" prefWidth="247.0" text="Create Account" />
+            <Label layoutX="131.0" layoutY="186.0" prefHeight="44.0" prefWidth="123.0" text="Password:" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
+            <Label fx:id="loginMessageLabel" layoutX="65.0" layoutY="297.0" prefHeight="36.0" prefWidth="247.0" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
          </children>
       </AnchorPane>
-   </bottom>
+   </center>
 </BorderPane>

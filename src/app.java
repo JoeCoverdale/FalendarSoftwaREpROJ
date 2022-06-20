@@ -14,6 +14,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+
 public class app extends Application {
     @Override
     public void start(Stage primaryStage) {
@@ -21,7 +22,7 @@ public class app extends Application {
   Parent root;
     try {
 
-    root = FXMLLoader.load(getClass().getResource("logInPage.fxml"));
+    root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
     Scene scene = new Scene(root);
     primaryStage.setTitle("PPF Home.");
     primaryStage.setScene(scene);
