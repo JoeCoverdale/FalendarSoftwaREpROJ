@@ -3,28 +3,35 @@
 //Student Number: 17024693
 
 //Imported Libraries
-import javafx.scene.paint.Color;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.io.IOException;
 
-//Fucntion used for calendar page within app
 public class app extends Application {
-    public void start(Stage stage){
-        Group root = new Group();
-        Scene scene = new Scene(root, 300,450, Color.WHITE);
-        stage.setScene(scene);
-        stage.setTitle("Create Account");
-        stage.show();
+    @Override
+    public void start(Stage primaryStage) {
+
+  Parent root;
+    try {
+
+    root = FXMLLoader.load(getClass().getResource("logInPage.fxml"));
+    Scene scene = new Scene(root);
+    primaryStage.setTitle("PPF Home.");
+    primaryStage.setScene(scene);
+    primaryStage.show();} catch (IOException e) {
+
+    e.printStackTrace();
+}
     }
-    public static void main(String args[]){
+ 
+ public static void main(String[] args) {
         launch(args);
     }
 }

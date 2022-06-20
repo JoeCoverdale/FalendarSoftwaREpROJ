@@ -14,20 +14,24 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
-/*
-//Function used for first page user will see when using the app
-public class logInPageController extends Application {
-    public void start(Stage stage){
-        Group root = new Group();
-        Scene scene = new Scene(root, 300,450, Color.WHITE);
-        stage.setScene(scene);
-        stage.setTitle("Create Account");
-        stage.show();
-    }
-    public static void main(String args[]){
-        launch(args);
-    }
+public class logInPageController {
+
+    @FXML
+    private Button createAccountButton;
+
+    @FXML
+    private Button logInButton;
+
+    @FXML
+    private TextField passwordInput;
+
+    @FXML
+    private TextField usernameInput;
+
 }
-*/
+
 
