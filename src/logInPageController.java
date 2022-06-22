@@ -57,11 +57,29 @@ public class logInPageController{
     public void loginButtonOnAction(ActionEvent event) {
         if (usernameTextField.getText().isEmpty()== false && passwordPasswordField.getText().isEmpty()== false){
             checkLogin();
+
         }
             else{
                 loginMessageLabel.setText("Details incorrect. Please try again.");
             }
     }
+
+    /*sMethod used to go to calendar page
+    public void redirectToCaledarPage(ActionEvent event){
+        try{
+
+            Parent root = FXMLLoader.load(getClass().getResource("calendarPage.fxml"));
+            Stage calendarStage = new Stage();
+            Scene scene = new Scene(root);
+            calendarStage.setTitle("Calendar");
+            calendarStage.setScene(scene);
+            calendarStage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }*/
 
     //Password text field fucntionality - add echo functionality if enough time
     @FXML
@@ -95,7 +113,7 @@ public class logInPageController{
 
             while(queryResult.next()){
                 if (queryResult.getInt(1) == 1) {
-                    loginMessageLabel.setText("Welcome user!");
+                    loginMessageLabel.setText("Welcome user!") ;
                 } else {
                     loginMessageLabel.setText("Details incorrect. Please try again.");
                 }
