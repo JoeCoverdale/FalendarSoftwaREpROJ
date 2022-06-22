@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 
 public class app extends Application {
@@ -22,9 +23,9 @@ public class app extends Application {
   Parent root;
     try {
 
-    root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+    root = FXMLLoader.load(getClass().getResource("logInPage.fxml"));
     Scene scene = new Scene(root);
-    primaryStage.setTitle("PPF Home.");
+    primaryStage.setTitle("Falendar");
     primaryStage.setScene(scene);
     primaryStage.show();} catch (IOException e) {
 
