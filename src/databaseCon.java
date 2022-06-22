@@ -8,22 +8,22 @@ import java.sql.DriverManager;
 
 //Function used to gain conenction to the database
 public class databaseCon {
-    public Connection databaseLink;
+    public Connection conn;
 
     public Connection getConnection(){
-        String dbName = "LocalHost";
+        String dbName = "userdata";
         String dbUser = "root";
         String dbPassword = "123456";
-        String url = "jdbc:mysql://localhost/" + dbName;
-
+        String connectionString = "jdbc:mysql://localhost/" + dbName + "?user=" + dbUser + "&password=" + dbPassword + "&useUnicode=true&characterEncoding=UTF-8";
+        
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            databaseLink = DriverManager.getConnection(url, dbUser, dbPassword);
+            conn = DriverManager.getConnection(connectionString, dbUser, dbPassword);
 
         }catch(Exception e) {
             e.printStackTrace();
             e.getCause();
         }
-        return databaseLink;
+        return conn;
     }
 }

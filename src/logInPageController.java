@@ -60,12 +60,12 @@ public class logInPageController{
         stage.close();
     }
 
-    //Function used to validate the user log in details against SQL database
+    //Function used to check the user log in details against SQL database
     public void checkLogin(){
         databaseCon connectNow = new databaseCon();
         Connection connectDatabase = connectNow.getConnection();
 
-        String checkLoginDetais = "SELECT count(1) FROM user_details WHERE username = ''" + usernameTextField.getText() + "' AND password ='" + passwordTextField.getText();
+        String checkLoginDetais = "SELECT count(1) FROM user_details WHERE username ='" + usernameTextField.getText() + "' AND password ='" + passwordTextField.getText() + "'";
         
         try{
 
