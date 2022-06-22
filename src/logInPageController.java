@@ -6,14 +6,21 @@
 
 //Imported Libraries
 import javafx.event.ActionEvent;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import java.util.ResourceBundle;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 //Public class containing functionality for login page
 public class logInPageController{
@@ -22,8 +29,21 @@ public class logInPageController{
     @FXML
     private Button createAccountButton;
 
-    public void createAccountButtonOnAction(ActionEvent event) {
+    //used to take user to create account page
+    public void createAccountButtonOnAction(ActionEvent event){
+        try{
 
+            Parent root = FXMLLoader.load(getClass().getResource("createAccount.fxml"));
+            Stage createAccountStage = new Stage();
+            Scene scene = new Scene(root);
+            createAccountStage.setTitle("Create Account");
+            createAccountStage.setScene(scene);
+            createAccountStage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 
     //Login button functionality
@@ -35,17 +55,18 @@ public class logInPageController{
     private Label loginMessageLabel;
 
     public void loginButtonOnAction(ActionEvent event) {
-        if (usernameTextField.getText().isEmpty()== false && passwordTextField.getText().isEmpty()== false){
+        if (usernameTextField.getText().isEmpty()== false && passwordPasswordField.getText().isEmpty()== false){
             checkLogin();
         }
             else{
-                loginMessageLabel.setText("Details incorrect. Please try again!");
+                loginMessageLabel.setText("Details incorrect. Please try again.");
             }
     }
 
-    //Password text field fucntionality
+    //Password text field fucntionality - add echo functionality if enough time
     @FXML
-    private TextField passwordTextField;
+    private PasswordField passwordPasswordField;
+
 
     //Username textfield functionality
     @FXML
@@ -65,7 +86,7 @@ public class logInPageController{
         databaseCon connectNow = new databaseCon();
         Connection connectDatabase = connectNow.getConnection();
 
-        String checkLoginDetais = "SELECT count(1) FROM user_details WHERE username ='" + usernameTextField.getText() + "' AND password ='" + passwordTextField.getText() + "'";
+        String checkLoginDetais = "SELECT count(1) FROM user_details WHERE username ='" + usernameTextField.getText() + "' AND password ='" + passwordPasswordField.getText() + "'";
         
         try{
 
@@ -76,7 +97,7 @@ public class logInPageController{
                 if (queryResult.getInt(1) == 1) {
                     loginMessageLabel.setText("Welcome user!");
                 } else {
-                    loginMessageLabel.setText("Details incorrect. Please try again!");
+                    loginMessageLabel.setText("Details incorrect. Please try again.");
                 }
             }
 
