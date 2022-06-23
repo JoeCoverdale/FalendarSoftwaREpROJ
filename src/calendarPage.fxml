@@ -2,39 +2,41 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="385.0" style="-fx-background-color: #009391;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendarPageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="385.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendarPageController">
    <top>
-      <AnchorPane prefHeight="105.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="114.0" prefWidth="389.0" style="-fx-background-color: #4bc196;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="buttonLedt" layoutX="30.0" layoutY="29.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="52.0" text="🡨" />
-            <Button layoutX="301.0" layoutY="29.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="52.0" text="🡪" />
-            <DatePicker layoutX="100.0" layoutY="28.0" prefHeight="41.0" prefWidth="181.0" />
+            <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="14.0" layoutY="24.0" prefHeight="66.0" prefWidth="364.0" text="Welcome">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </top>
    <bottom>
-      <AnchorPane prefHeight="442.0" prefWidth="386.0" style="-fx-background-color: Mihnt;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="578.0" prefWidth="385.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <TableView layoutY="-90.0" prefHeight="549.0" prefWidth="386.0" style="-fx-background-color: #d3d3d3;" tableMenuButtonVisible="true">
+            <Label fx:id="deatailsSavedLabel" layoutX="108.0" layoutY="389.0" prefHeight="37.0" prefWidth="169.0" />
+            <DatePicker fx:id="DatePicker" layoutX="58.0" layoutY="14.0" prefHeight="45.0" prefWidth="270.0" promptText="Choose Date" />
+            <Button fx:id="editNoteButton" layoutX="103.0" layoutY="522.0" mnemonicParsing="false" onAction="#editNotesButtonOnAction" prefHeight="37.0" prefWidth="80.0" text="Edit Notes" />
+            <Button fx:id="exitButton" layoutX="288.0" layoutY="522.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="37.0" prefWidth="80.0" text="Exit" />
+            <Button fx:id="saveNotesButton" layoutX="193.0" layoutY="522.0" mnemonicParsing="false" onAction="#saveNotesButtonOnAction" prefHeight="37.0" prefWidth="85.0" text="Save" />
+            <TableView fx:id="dataTableView" layoutX="14.0" layoutY="67.0" prefHeight="445.0" prefWidth="353.0">
               <columns>
-                <TableColumn prefWidth="48.00006425380707" text="Mon" />
-                <TableColumn prefWidth="47.999996185302734" text="Tue" />
-                  <TableColumn prefWidth="59.3333740234375" text="Wed" />
-                  <TableColumn prefWidth="54.666748046875" text="Thu" />
-                  <TableColumn prefWidth="54.666748046875" text="Fri" />
-                  <TableColumn prefWidth="54.666748046875" text="Sat" />
-                  <TableColumn prefWidth="54.666748046875" text="Sun" />
+                <TableColumn prefWidth="117.6667" text="Exercise" />
+                <TableColumn prefWidth="78.0" text="Repititions" />
+                  <TableColumn prefWidth="158.00001525878906" text="Notes" />
               </columns>
-               <effect>
-                  <Blend />
-               </effect>
             </TableView>
+            <Button fx:id="addNoteButton" layoutX="14.0" layoutY="522.0" mnemonicParsing="false" onAction="#addNoteButtonOnAction" prefHeight="37.0" prefWidth="80.0" text="Add Notes" />
          </children>
       </AnchorPane>
    </bottom>

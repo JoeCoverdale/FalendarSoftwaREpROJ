@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+//Functions and Methods
 //Public class containing functionality for login page
 public class logInPageController{
 
@@ -113,7 +114,19 @@ public class logInPageController{
 
             while(queryResult.next()){
                 if (queryResult.getInt(1) == 1) {
-                    loginMessageLabel.setText("Welcome user!") ;
+                    try{
+
+                        Parent root = FXMLLoader.load(getClass().getResource("calendarPage.fxml"));
+                        Stage calendarStage = new Stage();
+                        Scene scene = new Scene(root);
+                        calendarStage.setTitle("Calendar");
+                        calendarStage.setScene(scene);
+                        calendarStage.show();
+            
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                        e.getCause();
+                    } ;
                 } else {
                     loginMessageLabel.setText("Details incorrect. Please try again.");
                 }

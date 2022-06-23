@@ -2,6 +2,8 @@
 //Creator: Joseph Coverdale
 //Student Number: 17024693
 
+/*--------------------------------------------------------------------------------------------------------------------- */
+
 //Imported Libraries
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -15,7 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
-
+//Functions and Methods
 public class app extends Application {
     @Override
     public void start(Stage primaryStage) {

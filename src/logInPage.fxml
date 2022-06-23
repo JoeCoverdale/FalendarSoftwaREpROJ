@@ -10,9 +10,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="386.0" style="-fx-background-color: #009391;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logInPageController">
    <top>
-      <AnchorPane prefHeight="105.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="114.0" prefWidth="389.0" style="-fx-background-color: #4bc196;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="99.0" layoutY="27.0" text="Falendar">
+            <Label layoutX="99.0" layoutY="31.0" text="Falendar">
                <font>
                   <Font name="Arial Bold" size="45.0" />
                </font>

@@ -2,10 +2,13 @@
 //Creator: Joseph Coverdale
 //Student Number: 17024693
 
-//Imported libraries
+/*--------------------------------------------------------------------------------------------------------------------- */
+
+//Imported Libraries
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+//Functions and Methods
 //Function used to gain conenction to the database
 public class databaseCon {
     public Connection conn;

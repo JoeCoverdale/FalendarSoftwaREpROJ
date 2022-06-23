@@ -15,7 +15,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-
 import java.io.File;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -24,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 
+//Functions and Methods
 
 public class createAccountController {
 
