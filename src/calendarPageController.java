@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import java.util.ResourceBundle;
+import javax.swing.Action;
 import java.io.IOException;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableView;
@@ -28,6 +29,10 @@ public class calendarPageController {
 
     @FXML
     private DatePicker DatePicker;
+
+    public void DatePickerOnAction(ActionEvent event){
+
+    }
 
     @FXML
     private Button addNoteButton;
