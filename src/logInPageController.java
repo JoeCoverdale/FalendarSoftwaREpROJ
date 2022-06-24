@@ -65,24 +65,6 @@ public class logInPageController{
             }
     }
 
-    /*sMethod used to go to calendar page
-    public void redirectToCaledarPage(ActionEvent event){
-        try{
-
-            Parent root = FXMLLoader.load(getClass().getResource("calendarPage.fxml"));
-            Stage calendarStage = new Stage();
-            Scene scene = new Scene(root);
-            calendarStage.setTitle("Calendar");
-            calendarStage.setScene(scene);
-            calendarStage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
-    }*/
-
-    //Password text field fucntionality - add echo functionality if enough time
     @FXML
     private PasswordField passwordPasswordField;
 
