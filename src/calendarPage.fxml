@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -25,19 +24,18 @@
    <bottom>
       <AnchorPane prefHeight="578.0" prefWidth="385.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <DatePicker fx:id="DateChooserDatePicker" layoutX="58.0" layoutY="14.0" prefHeight="45.0" prefWidth="270.0" promptText="Choose Date" />
-            <Button fx:id="editNoteButton" layoutX="103.0" layoutY="522.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="80.0" text="Edit Notes" />
-            <Button fx:id="exitButton" layoutX="288.0" layoutY="522.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="37.0" prefWidth="85.0" text="Exit" />
-            <Button fx:id="saveNotesButton" layoutX="193.0" layoutY="522.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="85.0" text="Save" />
-            <TableView fx:id="exerciseDataTableView" layoutX="8.0" layoutY="296.0" prefHeight="216.0" prefWidth="369.0">
+            <Button fx:id="editNoteButton" layoutX="107.0" layoutY="522.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="92.25" text="Edit Notes" />
+            <Button fx:id="exitButton" layoutX="299.0" layoutY="522.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="37.0" prefWidth="92.25" text="Exit" />
+            <Button fx:id="deleteNotesButton" layoutX="204.0" layoutY="522.0" mnemonicParsing="false" onAction="#deleteNotesButtonOnAction" prefHeight="37.0" prefWidth="92.25" text="Delete" />
+            <TableView fx:id="exerciseDataTableView" layoutX="7.0" layoutY="281.0" onMouseClicked="#rowClicked" prefHeight="193.0" prefWidth="385.0">
               <columns>
                 <TableColumn fx:id="dateColumn" prefWidth="92.25" text="Date" />
                 <TableColumn fx:id="exerciseColumn" prefWidth="92.25" text="Exercise" />
                   <TableColumn fx:id="SetsAndRepsColumn" minWidth="0.0" prefWidth="92.25" text="Sets &amp; Reps" />
-                  <TableColumn fx:id="weightColumn" prefWidth="92.25" text="Weight" />
+                  <TableColumn fx:id="weightColumn" prefWidth="106.00005086263019" text="Weight" />
               </columns>
             </TableView>
-            <Button fx:id="addNoteButton" layoutX="14.0" layoutY="522.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="80.0" text="Add Notes" />
+            <Button fx:id="addNoteButton" layoutX="7.0" layoutY="522.0" mnemonicParsing="false" onAction="#addNoteButtonOnAction" prefHeight="37.0" prefWidth="96.25" text="Add Notes" />
             <Label alignment="CENTER" layoutX="122.0" layoutY="55.0" prefHeight="37.0" prefWidth="136.0" text="Exercise">
                <font>
                   <Font name="System Bold" size="20.0" />
@@ -48,15 +46,22 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="46.0" layoutY="173.0" prefHeight="37.0" prefWidth="297.0" text="Weight In kg:">
+            <Label alignment="CENTER" layoutX="46.0" layoutY="173.0" prefHeight="37.0" prefWidth="297.0" text="Weight In kg">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="ExerciseTextField" layoutX="61.0" layoutY="88.0" prefHeight="32.0" prefWidth="261.0" promptText="Exercise e.g. Flat Bench Press" />
+            <TextField fx:id="exerciseTextField" layoutX="61.0" layoutY="88.0" prefHeight="32.0" prefWidth="261.0" promptText="Exercise e.g. Flat Bench Press" />
             <TextField fx:id="setsAndRepsTextField" layoutX="61.0" layoutY="145.0" prefHeight="32.0" prefWidth="261.0" promptText="Sets &amp; Reps e.g. 4 X 8" />
             <TextField fx:id="weightTextField" layoutX="61.0" layoutY="205.0" prefHeight="32.0" prefWidth="261.0" promptText="Weight e.g. 23, 26, 30, 33" />
-            <Label fx:id="saveLabel" alignment="CENTER" layoutX="62.0" layoutY="252.0" prefHeight="31.0" prefWidth="264.0" />
+            <Label fx:id="saveLabel" alignment="CENTER" layoutX="63.0" layoutY="243.0" prefHeight="31.0" prefWidth="264.0" />
+            <Label fx:id="dateLabel" alignment="CENTER" layoutX="127.0" prefHeight="37.0" prefWidth="136.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dateTextField" layoutX="61.0" layoutY="30.0" prefHeight="32.0" prefWidth="261.0" promptText="Date e.g. 25th June 2022" />
+            <Button fx:id="viewPrevExerciseButton" layoutX="111.0" layoutY="480.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="185.0" text="View previous exercises" />
          </children>
       </AnchorPane>
    </bottom>

@@ -1,4 +1,4 @@
-// Software Project: Fitness Calendar
+// Software Project: Fitness note taking application
 //Creator: Joseph Coverdale
 //Student Number: 17024693
 
