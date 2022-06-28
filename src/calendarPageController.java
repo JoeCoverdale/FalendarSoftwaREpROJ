@@ -5,29 +5,18 @@
 /*--------------------------------------------------------------------------------------------------------------------- */
 
 //Imported Libraries
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-
 import java.sql.Connection;
 import java.sql.Statement;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import java.util.ResourceBundle;
-import javax.print.DocFlavor.STRING;
-import javax.swing.Action;
-import javax.swing.text.TabableView;
-import com.mysql.cj.xdevapi.Table;
-import java.io.IOException;
 import java.net.URL;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
@@ -42,34 +31,12 @@ public class calendarPageController implements Initializable {
 
     //Details saved label
     @FXML Label saveLabel;
-
-    /*Used to save the details to sql db - May adjsut and make add button save aswell
-    public void saveDetails(){
-        databaseCon connectNow = new databaseCon(); 
-        Connection connectDatabase = connectNow.getConnection();
-
-        String dateOfWorkout = dateTextField.getText();
-        String exercise = ExerciseTextField.getText();
-        String setsAndReps = setsAndRepsTextField.getText();
-        String weight = weightTextField.getText();
-
-        String insertFields = "INSERT INTO exercisedata (workoutDate, exerciseName, setsAndReps, weightInKg) VALUES ('";
-        String insertValues = dateOfWorkout + "','" + exercise + "','" + setsAndReps + "','" + weight + "')";
-        String insertToSave = insertFields + insertValues;
-
-        try{
-            Statement statement = connectDatabase.createStatement();
-            statement.executeUpdate(insertToSave);
-
-            saveLabel.setText("Details Saved");
-
-        }catch (Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
-    }
-        */
+    
 //Program input -------------------------------
+
+    @FXML
+    private TextField iDTextField;
+
     @FXML
     private TextField dateTextField;
 
@@ -88,6 +55,10 @@ public class calendarPageController implements Initializable {
     private TableView<exerciseData> exerciseDataTableView;
 
 //columns -------------------------------
+
+    @FXML
+    private TableColumn<exerciseData, Integer> idColumn;
+
     @FXML
     private TableColumn<exerciseData, String> dateColumn;
 
@@ -102,6 +73,7 @@ public class calendarPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        idColumn.setCellValueFactory(new PropertyValueFactory<exerciseData, Integer>("id"));;
         dateColumn.setCellValueFactory(new PropertyValueFactory<exerciseData, String>("dow"));
         exerciseColumn.setCellValueFactory(new PropertyValueFactory<exerciseData, String>("e"));
         SetsAndRepsColumn.setCellValueFactory(new PropertyValueFactory<exerciseData, String>("sar"));
@@ -113,7 +85,8 @@ public class calendarPageController implements Initializable {
     private Button addNoteButton;
     
     public void addNoteButtonOnAction(ActionEvent event){
-        exerciseData exerciseData = new exerciseData(dateTextField.getText(),
+        exerciseData exerciseData = new exerciseData(Integer.parseInt(iDTextField.getText()),
+                (dateTextField.getText()),
                 (exerciseTextField.getText()),
                 (setsAndRepsTextField.getText()),
                 (weightTextField.getText()));
@@ -125,13 +98,14 @@ public class calendarPageController implements Initializable {
         databaseCon connectNow = new databaseCon(); 
         Connection connectDatabase = connectNow.getConnection();
 
+        Integer id = Integer.parseInt(iDTextField.getText());
         String dateOfWorkout = dateTextField.getText();
         String exercise = exerciseTextField.getText();
         String setsAndReps = setsAndRepsTextField.getText();
         String weight = weightTextField.getText();
 
-        String insertFields = "INSERT INTO exercisedata (workoutDate, exerciseName, setsAndReps, weightInKg) VALUES ('";
-        String insertValues = dateOfWorkout + "','" + exercise + "','" + setsAndReps + "','" + weight + "')";
+        String insertFields = "INSERT INTO exercisedata (id, workoutDate, exerciseName, setsAndReps, weightInKg) VALUES ('";
+        String insertValues = id + "','" + dateOfWorkout + "','" + exercise + "','" + setsAndReps + "','" + weight + "')";
         String insertToSave = insertFields + insertValues;
 
         try{
@@ -157,14 +131,33 @@ public class calendarPageController implements Initializable {
     //Used to edit notes which have been saved 
     @FXML
     private Button editNoteButton;
+    
+    public void editNoteButtonOnAction(ActionEvent event){
+        ObservableList <exerciseData> currentTableData = exerciseDataTableView.getItems();
+        int currentRowId = Integer.parseInt(iDTextField.getText());
+
+        for (exerciseData exerciseData : currentTableData){
+            if(exerciseData.getId()==currentRowId) {
+                exerciseData.setDow(dateTextField.getText());
+                exerciseData.setE(exerciseTextField.getText());
+                exerciseData.setSar(setsAndRepsTextField.getText());
+                exerciseData.setW(weightTextField.getText());
+
+                exerciseDataTableView.setItems(currentTableData);
+                exerciseDataTableView.refresh();
+                break;
+
+            }
+        }
+    }
 
     //Metrhod for when user clicks row they want to edit
     public void rowClicked(MouseEvent event){
-        exerciseData clickedExerciseData = exerciseData.getSelectionModel().getSelectedItem();
+        exerciseData clickedExerciseData = exerciseDataTableView.getSelectionModel().getSelectedItem();
+        iDTextField.setText((String.valueOf(clickedExerciseData.getId())));
         dateTextField.setText(String.valueOf(clickedExerciseData.getDow()));
         exerciseTextField.setText(String.valueOf(clickedExerciseData.getE()));
         setsAndRepsTextField.setText(String.valueOf(clickedExerciseData.getSar()));
-        weightTextField.setText(String.valueOf(clickedExerciseData.getW()));
     }
 
     //Used to exit the window

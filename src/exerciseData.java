@@ -1,7 +1,7 @@
-import javafx.scene.control.SelectionModel;
-
 public class exerciseData {
     
+    //Id
+    private Integer id;
     //Date of workout
     private String dow;
     //Exercise
@@ -11,11 +11,22 @@ public class exerciseData {
     //Weight
     private String w;
 
-    public exerciseData(String dow, String e, String sar, String w){
+    public exerciseData(Integer id, String dow, String e, String sar, String w){
+        this.id = id;
         this.dow = dow;
         this.e = e;
         this.sar = sar;
         this.w = w;
+    }
+
+
+    //Get/set id
+    public Integer getId(){
+        return id;
+    }
+
+    public void setId(Integer id){
+        this.id = id;
     }
 
     //Get/set date 
@@ -57,16 +68,11 @@ public class exerciseData {
     @Override
     public String toString(){
         return "exerciseData{"+
-                "dow=" + dow +
+                "id=" + id +
+                ", dow='" + dow + '\''+
                 ", e='" + e + '\''+
                 ", sar='" + sar + '\'' +
                 ", w='" + w + '\'' +
                 '}';
     }
-
-    public static SelectionModel<exerciseData> getSelectionModel() {
-        return null;
-    }
-
 }
-

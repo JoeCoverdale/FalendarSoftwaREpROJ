@@ -9,19 +9,11 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import java.sql.Connection;
 import java.sql.Statement;
-import java.sql.ResultSet;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import java.io.File;
-import java.sql.Connection;
-import java.sql.Statement;
-import java.net.URL;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.fxml.FXMLLoader;
 
 //Functions and Methods
 

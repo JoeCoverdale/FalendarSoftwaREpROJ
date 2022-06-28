@@ -18,10 +18,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import java.util.ResourceBundle;
-import javafx.stage.Stage;
-import java.io.IOException;
-
 //Functions and Methods
 //Public class containing functionality for login page
 public class logInPageController{
