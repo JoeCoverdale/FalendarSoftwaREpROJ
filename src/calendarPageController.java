@@ -158,22 +158,6 @@ public class calendarPageController implements Initializable {
     @FXML
     private Button editNoteButton;
 
-    //public void editNoteButtonOnAction(ActionEvent event){
-     //   ObservableList<exerciseData> currentTableData = exerciseDataTableView.getItems();
-     //   int exerciseId = Integer.parseInt(inputId.getText());
-
-     //   for (exerciseData exerciseData2 : currentTableData) {
-     //       if(exerciseData.getId() == currentAnimalId) {
-      //          animal.setType(inputType.getText());
-      //          animal.setName(inputName.getText());
-//
-      //          animals.setItems(currentTableData);
-      //          animals.refresh();
-      //          break;
-      //      }
-    //}
-    //  }
-
     //Metrhod for when user clicks row they want to edit
     public void rowClicked(MouseEvent event){
         exerciseData clickedExerciseData = exerciseData.getSelectionModel().getSelectedItem();
