@@ -79,7 +79,7 @@ public class calendarPageController implements Initializable {
         SetsAndRepsColumn.setCellValueFactory(new PropertyValueFactory<exerciseData, String>("sar"));
         weightColumn.setCellValueFactory(new PropertyValueFactory<exerciseData, String>("w"));
     }
-
+    
     //Add notes button - also savess ntoes to the sql db
     @FXML
     private Button addNoteButton;
@@ -119,14 +119,6 @@ public class calendarPageController implements Initializable {
             e.getCause();
         }
     }
- 
-    //Used to view the execises that have previouylsy been recorded
-    @FXML
-    private Button viewPrevExerciseButton;
-
-    public void viewPrevExerciseButtonOnAction(ActionEvent event){
-
-    }
 
     //Used to edit notes which have been saved 
     @FXML
@@ -159,6 +151,14 @@ public class calendarPageController implements Initializable {
         exerciseTextField.setText(String.valueOf(clickedExerciseData.getE()));
         setsAndRepsTextField.setText(String.valueOf(clickedExerciseData.getSar()));
     }
+
+     //Used to view the execises that have previouylsy been recorded
+     @FXML
+     private Button viewPrevExerciseButton;
+ 
+     public void viewPrevExerciseButtonOnAction(ActionEvent event){
+ 
+     }
 
     //Used to exit the window
     @FXML
