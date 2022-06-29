@@ -15,11 +15,10 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
-//Functions and Methods
-
+//Class containing fucntionalilty for the create account page 
 public class createAccountController {
 
-    //All fxml components
+//All fxml components
     @FXML
     private Label comfirmPasswordLabel;
     @FXML
@@ -49,7 +48,7 @@ public class createAccountController {
         }
     }
 
-    //Method used to registrer the user
+ //Method used to registrer the user
     public void registerUser(){
         databaseCon connectNow = new databaseCon(); 
         Connection connectDatabase = connectNow.getConnection();
@@ -85,7 +84,7 @@ public class createAccountController {
     @FXML
     private TextField registerUsernameTextField;
 
-    //Used to take user back to the login page
+//Used to take user back to the login page
     @FXML
     private Button closeButton;
 

@@ -19,7 +19,6 @@ public class exerciseData {
         this.w = w;
     }
 
-
     //Get/set id
     public Integer getId(){
         return id;

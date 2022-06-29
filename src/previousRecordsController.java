@@ -22,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
+//Class containing functionality for the previous records page
 public class previousRecordsController {
 
 //Table -------------------------------
@@ -47,6 +48,16 @@ public class previousRecordsController {
     private TableColumn<exerciseData, String> weightColumn;
 
 //Used to exit the window
+
+    @FXML
+    private Button viewRecordsButton;
+
+    public void viewRecordsButtonOnAction(ActionEvent event){
+        databaseCon connectNow = new databaseCon(); 
+        Connection connectDatabase = connectNow.getConnection();
+
+        
+    }
     @FXML
     private Button exitButton;
 
