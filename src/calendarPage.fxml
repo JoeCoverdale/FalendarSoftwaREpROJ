@@ -13,7 +13,7 @@
    <top>
       <AnchorPane prefHeight="114.0" prefWidth="389.0" style="-fx-background-color: #4bc196;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="14.0" layoutY="24.0" prefHeight="66.0" prefWidth="364.0" text="Welcome">
+            <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="14.0" layoutY="24.0" prefHeight="66.0" prefWidth="377.0" text="Welcome">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -22,7 +22,7 @@
       </AnchorPane>
    </top>
    <center>
-      <AnchorPane prefHeight="578.0" prefWidth="385.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="567.0" prefWidth="0.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="editNoteButton" layoutX="107.0" layoutY="522.0" mnemonicParsing="false" onAction="#editNoteButtonOnAction" prefHeight="37.0" prefWidth="92.25" text="Edit Notes" />
             <Button fx:id="exitButton" layoutX="299.0" layoutY="522.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="37.0" prefWidth="92.25" text="Exit" />

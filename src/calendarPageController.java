@@ -7,22 +7,26 @@
 //Imported Libraries
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import java.sql.Connection;
 import java.sql.Statement;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import java.util.ResourceBundle;
+import java.io.IOException;
 import java.net.URL;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
-//Functions and Methods
+//Class containing fucntionality for calendar page 
 public class calendarPageController implements Initializable {
 
     //Welcome label 
@@ -157,9 +161,20 @@ public class calendarPageController implements Initializable {
      private Button viewPrevExerciseButton;
  
      public void viewPrevExerciseButtonOnAction(ActionEvent event){
- 
-     }
+        try{
 
+                Parent root = FXMLLoader.load(getClass().getResource("previouRecords.fxml"));
+                Stage previousRecordsStage = new Stage();
+                Scene scene = new Scene(root);
+                previousRecordsStage.setTitle("Previous Records");
+                previousRecordsStage.setScene(scene);
+                previousRecordsStage.show();
+
+        }       catch(Exception e) {
+                e.printStackTrace();
+                e.getCause();
+        }
+    }
     //Used to exit the window
     @FXML
     private Button exitButton;
