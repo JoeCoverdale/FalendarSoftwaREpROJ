@@ -27,7 +27,7 @@
             <Button fx:id="editNoteButton" layoutX="107.0" layoutY="522.0" mnemonicParsing="false" onAction="#editNoteButtonOnAction" prefHeight="37.0" prefWidth="92.25" text="Edit Notes" />
             <Button fx:id="exitButton" layoutX="299.0" layoutY="522.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="37.0" prefWidth="92.25" text="Exit" />
             <Button fx:id="deleteNotesButton" layoutX="204.0" layoutY="522.0" mnemonicParsing="false" onAction="#deleteNotesButtonOnAction" prefHeight="37.0" prefWidth="92.25" text="Delete" />
-            <TableView fx:id="exerciseDataTableView" layoutX="7.0" layoutY="288.0" prefHeight="193.0" prefWidth="385.0">
+            <TableView fx:id="exerciseDataTableView" layoutX="7.0" layoutY="300.0" prefHeight="214.0" prefWidth="385.0">
               <columns>
                 <TableColumn fx:id="idColumn" prefWidth="46.000017166137695" text="ID" />
                 <TableColumn fx:id="dateColumn" prefWidth="86.66675186157227" text="Date" />
@@ -61,7 +61,6 @@
                </font>
             </Label>
             <TextField fx:id="dateTextField" layoutX="61.0" layoutY="87.0" prefHeight="32.0" prefWidth="261.0" promptText="Date e.g. 25th June 2022" />
-            <Button fx:id="viewPrevExerciseButton" layoutX="111.0" layoutY="483.0" mnemonicParsing="false" onAction="#viewPrevExerciseButtonOnAction" prefHeight="37.0" prefWidth="185.0" text="View previous exercises" />
             <Label fx:id="dateLabel1" alignment="CENTER" layoutX="122.0" layoutY="-5.0" prefHeight="37.0" prefWidth="136.0" text="ID">
                <font>
                   <Font name="System Bold" size="20.0" />
